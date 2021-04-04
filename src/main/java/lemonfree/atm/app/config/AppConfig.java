@@ -13,8 +13,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @since 2021-02-28
  */
 @Configuration
-@EnableAutoConfiguration
 @EnableJpaRepositories(value = "lemonfree.atm.app.repo")
+@EntityScan(basePackages = {"lemonfree.atm.app.entity"})
 public class AppConfig {
 //
 }

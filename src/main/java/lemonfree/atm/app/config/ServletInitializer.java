@@ -1,5 +1,6 @@
 package lemonfree.atm.app.config;
 
+import lemonfree.atm.app.AtManagementSystemApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

@@ -8,12 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdminController {
 
-	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value="/")
+	@Autowired
+	public AdminController(UserService userService) {
+		this.userService = userService;
+	}
+
+	@RequestMapping(value = "/")
 	public String index() {
 		return "index";
 	}
-
 }
