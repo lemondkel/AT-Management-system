@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface UserService {
 
-	List findAll();
+	List<User> findAll();
 
-	Object findById(Long id);
+	User findById(Long id);
 
 	void save(User entity);
 
@@ -19,4 +19,6 @@ public interface UserService {
 	void deleteById(Long id);
 
 	void deleteAll();
+
+	List<User> findAllByPageNo(int pageNo);
 }

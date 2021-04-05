@@ -1,8 +1,11 @@
 package lemonfree.atm.app.service;
 
+import lemonfree.atm.app.common.Constant;
 import lemonfree.atm.app.entity.User;
 import lemonfree.atm.app.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -51,5 +54,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void deleteAll() {
 		userRepository.deleteAll();
+	}
+
+	@Override
+	public List<User> findAllByPageNo(int pageNo) {
+		PageRequest pageRequest = PageRequest.of(pageNo, Constant.COMMON_PAGING_SIZE, Sort.by("id").descending());
+		return userRepository.findAll(pageRequest).getContent();
 	}
 }
